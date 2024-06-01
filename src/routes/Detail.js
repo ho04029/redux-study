@@ -6,7 +6,7 @@ const Detail = () => {
   const { id } = useParams();
   const todos = useSelector((state) => state);
   const todo = todos.find((toDo) => toDo.id === parseInt(id));
-  console.log(todo);
+
   return (
     <>
       <h1>{todo?.text}</h1>

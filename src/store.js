@@ -7,14 +7,11 @@ const toDos = createSlice({
     add: (state, action) => {
       state.push({ text: action.payload, id: Date.now() });
     },
-    remove: (state, action) => {
-      state.filter((toDo) => toDo.id !== action.payload);
-    },
+    remove: (state, action) =>
+      state.filter((toDo) => toDo.id !== action.payload),
   },
 });
 
-const store = configureStore({ reducer: toDos.reducer });
-
 export const { add, remove } = toDos.actions;
 
-export default store;
+export default configureStore({ reducer: toDos.reducer });
